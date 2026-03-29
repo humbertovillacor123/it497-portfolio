@@ -73,9 +73,11 @@ function setActiveLink() {
 
 function animateBackgroundGlow() {
   const scrollY = window.scrollY;
+
   if (glowOne) {
     glowOne.style.transform = `translate3d(0, ${scrollY * 0.08}px, 0)`;
   }
+
   if (glowTwo) {
     glowTwo.style.transform = `translate3d(0, ${scrollY * -0.06}px, 0)`;
   }

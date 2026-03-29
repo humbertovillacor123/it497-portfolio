@@ -361,6 +361,16 @@ main,
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+.project-grid-large {
+  align-items: stretch;
+}
+
+.featured-project {
+  border-color: rgba(91, 140, 255, 0.18);
+  background:
+    linear-gradient(180deg, rgba(20, 30, 52, 0.92), rgba(11, 18, 34, 0.88));
+}
+
 .glass-card h3 {
   color: var(--white);
   font-size: 1.15rem;
@@ -536,13 +546,11 @@ main,
 @media (max-width: 1080px) {
   .hero-grid,
   .three-col,
+  .two-col,
   .skills-grid,
   .contact-grid,
-  .resume-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .two-col {
+  .resume-grid,
+  .project-grid-large {
     grid-template-columns: 1fr;
   }
 
