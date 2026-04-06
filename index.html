@@ -17,6 +17,9 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <a class="skip-link" href="#mainContent">Skip to main content</a>
+  <div id="scrollProgress"></div>
+
   <div class="background-glow background-glow-1"></div>
   <div class="background-glow background-glow-2"></div>
 
@@ -41,6 +44,7 @@
         <li><a href="#alignment">Alignment</a></li>
         <li><a href="#resume">Résumé</a></li>
         <li><a href="#projects">Projects</a></li>
+        <li><a href="#skills">Skills</a></li>
         <li><a href="#ethical">Ethics</a></li>
         <li><a href="#refinement">Refinement</a></li>
         <li><a href="#peer-review">Peer Review</a></li>
@@ -51,7 +55,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="mainContent">
     <section class="hero" id="home">
       <div class="container hero-grid">
         <div class="hero-copy fade-in">
@@ -78,12 +82,22 @@
               <span class="highlight-label">Strengths</span>
               <strong>Problem Solving • Discipline • Service</strong>
             </div>
+            <div class="highlight-card reveal-card">
+              <span class="highlight-label">Current Goal</span>
+              <strong>Keep building real projects and prepare for internships</strong>
+            </div>
           </div>
         </div>
 
         <div class="hero-panel fade-in-delayed">
           <div class="profile-card reveal-card">
+            <div class="profile-top">
+              <span class="status-dot"></span>
+              <p class="profile-status">Open to growth and new opportunities</p>
+            </div>
+
             <h2>Quick Profile</h2>
+
             <ul class="profile-list">
               <li><span>Name</span><strong>Humberto Villanueva</strong></li>
               <li><span>Email</span><strong>hachevillanueva99@gmail.com</strong></li>
@@ -91,6 +105,17 @@
               <li><span>School</span><strong>Ensign College</strong></li>
               <li><span>Goal</span><strong>Become a software engineer</strong></li>
             </ul>
+
+            <div class="profile-mini-stats">
+              <div class="mini-stat">
+                <span>Projects</span>
+                <strong>4+</strong>
+              </div>
+              <div class="mini-stat">
+                <span>Focus</span>
+                <strong>Web + Mobile</strong>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -653,10 +678,12 @@
 
   <footer class="site-footer">
     <div class="container footer-content">
-      <p>© 2026 Humberto Villanueva</p>
+      <p>© <span id="currentYear">2026</span> Humberto Villanueva</p>
       <p>Software Engineering Portfolio</p>
     </div>
   </footer>
+
+  <button id="backToTop" aria-label="Back to top">↑</button>
 
   <script src="script.js"></script>
 </body>

@@ -5,6 +5,9 @@ const animatedItems = document.querySelectorAll(".fade-in, .fade-in-delayed");
 const sections = document.querySelectorAll("main section[id], .hero[id]");
 const glowOne = document.querySelector(".background-glow-1");
 const glowTwo = document.querySelector(".background-glow-2");
+const scrollProgress = document.getElementById("scrollProgress");
+const backToTop = document.getElementById("backToTop");
+const currentYear = document.getElementById("currentYear");
 
 if (menuToggle && navLinks) {
   menuToggle.addEventListener("click", () => {
@@ -83,14 +86,51 @@ function animateBackgroundGlow() {
   }
 }
 
+function updateScrollProgress() {
+  if (!scrollProgress) return;
+
+  const scrollTop = window.scrollY;
+  const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+  scrollProgress.style.width = `${progress}%`;
+}
+
+function toggleBackToTop() {
+  if (!backToTop) return;
+
+  if (window.scrollY > 420) {
+    backToTop.classList.add("show");
+  } else {
+    backToTop.classList.remove("show");
+  }
+}
+
+if (backToTop) {
+  backToTop.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  });
+}
+
+if (currentYear) {
+  currentYear.textContent = new Date().getFullYear();
+}
+
 window.addEventListener("scroll", () => {
   setActiveLink();
   animateBackgroundGlow();
+  updateScrollProgress();
+  toggleBackToTop();
 });
 
 window.addEventListener("load", () => {
+  document.body.classList.add("loaded");
   setActiveLink();
   animateBackgroundGlow();
+  updateScrollProgress();
+  toggleBackToTop();
 });
 
 console.log("Portfolio loaded");
